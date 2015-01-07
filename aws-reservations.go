@@ -231,8 +231,6 @@ func ec2iToec2ii(r ec2.Instance) ec2InstInfo {
 			ec2.InstanceStateNameShuttingDown,
 			ec2.InstanceStateNamePending:
 			out.State = Active
-		default:
-			fmt.Println("state is:", toStr(r.State.Name))
 		}
 	}
 	return out
