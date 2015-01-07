@@ -229,9 +229,6 @@ func ec2iToec2ii(r ec2.Instance) ec2InstInfo {
 	if r.State != nil {
 		switch toStr(r.State.Name) {
 		case ec2.InstanceStateNameRunning,
-			ec2.InstanceStateNameStopped,
-			ec2.InstanceStateNameStopping,
-			ec2.InstanceStateNameShuttingDown,
 			ec2.InstanceStateNamePending:
 			out.State = Active
 		}
