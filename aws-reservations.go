@@ -192,6 +192,9 @@ func rdsiTordsii(r rds.DBInstance) rdsInstInfo {
 		Count: 1,
 		State: Active,
 	}
+	if out.Product == "postgres" {
+		out.Product = "postgresql"
+	}
 	return out
 }
 
