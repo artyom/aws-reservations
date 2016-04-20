@@ -26,9 +26,7 @@ func main() {
 	}{
 		Region: "us-west-1",
 	}
-	if err := autoflags.Define(&config); err != nil {
-		log.Fatal(err)
-	}
+	autoflags.Define(&config)
 	flag.Parse()
 	creds := aws.DetectCreds(config.AccessKey, config.SecretKey, "")
 
